@@ -1,0 +1,28 @@
+x00: 1
+x01: 1
+x02: 1
+x03: 1
+y00: 0
+y01: 1
+y02: 0
+y03: 0
+
+x00 XOR y00 -> z00
+x00 AND y00 -> o00
+x01 XOR y01 -> a01
+a01 XOR o00 -> z01
+x01 AND y01 -> s01
+a01 AND o00 -> t01
+s01 OR t01 -> o01
+x02 XOR y02 -> a02
+a02 XOR o01 -> z02
+x02 AND y02 -> s02
+a02 AND o01 -> t02
+s02 OR t02 -> o02
+x03 XOR y03 -> a03
+a03 XOR o02 -> z03
+x03 AND y03 -> s03
+a03 AND o02 -> t03
+x03 AND y03 -> s03
+a03 AND o02 -> t03
+s03 OR t03 -> z04
