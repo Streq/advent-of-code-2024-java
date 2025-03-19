@@ -26,18 +26,18 @@ public class Day25 {
   record Schematic(int[] columns) {
 
     boolean fits(Schematic other) {
-        for (int i = 0; i < this.columns.length; i++) {
-          if (other.columns[i] + this.columns[i] > 5) {
-            return false;
-          }
+      for (int i = 0; i < this.columns.length; i++) {
+        if (other.columns[i] + this.columns[i] > 5) {
+          return false;
         }
-        return true;
       }
-
-      public String toString() {
-        return Arrays.toString(columns);
-      }
+      return true;
     }
+
+    public String toString() {
+      return Arrays.toString(columns);
+    }
+  }
 
   record Sheet(List<Schematic> keys, List<Schematic> locks) {}
 
@@ -71,8 +71,11 @@ public class Day25 {
 
     var ret = new Sheet(Collections.unmodifiableList(keys), Collections.unmodifiableList(locks));
 
-    System.out.printf("%d keys, %d unique keys.%n", ret.keys().size(), ret.keys().stream().distinct().count());
-    System.out.printf("%d locks, %d unique locks.%n", ret.locks().size(), ret.locks().stream().distinct().count());
+    System.out.printf(
+        "%d keys, %d unique keys.%n", ret.keys().size(), ret.keys().stream().distinct().count());
+    System.out.printf(
+        "%d locks, %d unique locks.%n",
+        ret.locks().size(), ret.locks().stream().distinct().count());
 
     return ret;
   }
